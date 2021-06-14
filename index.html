@@ -12,7 +12,7 @@
   <p> Client website screen</p>
 </div> 
 <div>
-<iframe id="oneview-chatbot" sandbox="allow-same-origin allow-scripts" src="https://silly-austin-a220d4.netlify.app/index.html" style="position: fixed;right:0px;bottom:0px; height: auto; border:0; background: transparent;width: 420px;" title="Chat Box"></iframe>
+<iframe id="oneview-chatbot" sandbox="allow-same-origin allow-scripts" src="https://milliqa.thebanknet.com:7173/chatbot.html" style="position: fixed;right:0px;bottom:0px; height: auto; border:0; background: transparent;width: 420px;" title="Chat Box"></iframe>
 </div>
 
 
@@ -30,12 +30,12 @@
     var x = document.getElementById("oneview-chatbot");
     var y = (x.contentWindow);
     console.log('triggered', y)
-    if(y.document && y.document !== '') console.log(y.document)
+    if(y.document && y.document !== '') console.log(y.document.getElementsByTagName("body"))
     // console.log('then', y.document)
     // x.document.getElementsByTagName("body")[0].style.backgroundColor = "blue";
 
       $('.chat-toggler .agent-image-wrapper,.chat-toggler .initial-chat').click(function() {
-        // console.log('triggered', x.document)
+        console.log('triggerClick', y.document)
           // $('#oneview-chatbot').css( { height: `calc(100vh - 30px)` } );
       });
       $('.msger-header-options .close-btn').click(function() {

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+<div style="text-align: center;">     
+  <h1> Chat Bot integration Testing</h1>
+  <p> Client website screen</p>
+</div> 
+<div>
+<iframe id="oneview-chatbot" sandbox="allow-same-origin allow-scripts" src="https://milliqa.thebanknet.com:7173/chatbot.html" style="position: fixed;right:0px;bottom:0px; height: auto; border:0; background: transparent;width: 420px;" title="Chat Box"></iframe>
+</div>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script>
+   $(document).ready(function() {
+    // window.addEventListener( "message",
+    //   function (e) {
+    //     alert(e.origin)
+    //         if(e.origin !== 'file:///C:/Users/Sufail%20A/Desktop/projects/object-data-snippet-code/Client-html/client.html'){ return; } 
+    //         alert(e.data);
+    //   },
+    //   false);
+
+    var x = document.getElementById("oneview-chatbot");
+    var y = (x.contentWindow);
+    console.log('triggered', y)
+    if(y.document && y.document !== '') console.log(y.document)
+    // console.log('then', y.document)
+    // x.document.getElementsByTagName("body")[0].style.backgroundColor = "blue";
+
+      $('.chat-toggler .agent-image-wrapper,.chat-toggler .initial-chat').click(function() {
+        // console.log('triggered', x.document)
+          // $('#oneview-chatbot').css( { height: `calc(100vh - 30px)` } );
+      });
+      $('.msger-header-options .close-btn').click(function() {
+          $('#oneview-chatbot').css( { height: `auto` } );
+      });
+    });
+  </script>
+</body>
+</html>

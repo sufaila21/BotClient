@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <style type="text/css">
-    .chat-toggler {
+    .chat-toggler-client {
       position: fixed;
       right: 15px;
       bottom: 15px;
@@ -16,28 +16,7 @@
       justify-content: flex-end;
     }
 
-    .chat-toggler .initial-chat {
-      padding: 10px;
-      border-radius: 10px;
-      border-bottom-right-radius: 0;
-      background: #fff;
-      margin-bottom: 15px;
-      cursor: pointer;
-      -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
-      -moz-box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
-      box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
-    }
-
-    .initial-chat-close {
-      width: 10px;
-      height: 10px;
-      display: block;
-      margin-right: 5px;
-      margin-bottom: 15px;
-      cursor: pointer;
-    }
-
-    .chat-toggler .agent-image-wrapper {
+    .chat-toggler-client .agent-image-wrapper-client {
       display: block;
       width: 50px;
       height: 50px;
@@ -50,13 +29,13 @@
       box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
     }
 
-    .chat-toggler .agent-image-wrapper svg,
-    .chat-toggler .agent-image-wrapper img {
+    .chat-toggler-client .agent-image-wrapper-client svg,
+    .chat-toggler-client .agent-image-wrapper-client img {
       width: 100%;
       height: 100%;
     }
 
-    .msger-header-options {
+    .msger-header-options-client {
       position: fixed;
       right: 0;
       top: 4px;
@@ -65,7 +44,7 @@
       overflow: hidden;
     }
 
-    .msger-header-options .close-btn {
+    .msger-header-options-client .close-btn-client {
       width: 100%;
       height: 100%;
       cursor: pointer;
@@ -73,7 +52,7 @@
       border: 0;
     }
 
-    .msger-header-options .close-btn img {
+    .msger-header-options-client .close-btn-client img {
       width: 100%;
     }
   </style>
@@ -84,14 +63,14 @@
     <h1> Chat Bot integration Testing</h1>
     <p> Client website screen</p>
   </div>
-    <div class="chat-toggler">
-      <span class="agent-image-wrapper"><img
+    <div class="chat-toggler-client">
+      <span class="agent-image-wrapper-client"><img
           src="https://raw.githubusercontent.com/sufaila21/BotAgent/532b657588f61fe0815c0dd581b83eff17d31f67/images/agent.svg">
       </span>
     </div>
     <div class="msgWrap" style="display: none;">
-      <div class="msger-header-options">
-        <button class="close-btn ctl-btn" data-toggle="tooltip" data-placement="left" title="Close"><img
+      <div class="msger-header-options-client">
+        <button class="close-btn-client ctl-btn" data-toggle="tooltip" data-placement="left" title="Close"><img
             src="https://raw.githubusercontent.com/sufaila21/BotAgent/532b657588f61fe0815c0dd581b83eff17d31f67/images/cancel.svg"
             alt="cancel-icon"></button>
       </div>
@@ -102,11 +81,11 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   <script>
     $(document).ready(function () {
-      $('.chat-toggler .agent-image-wrapper').click(function () {
+      $('.chat-toggler-client .agent-image-wrapper-client').click(function () {
         $('#oneview-chatbot').css({ height: `calc(100vh - 30px)` });
         $('.msgWrap').fadeToggle().css('display', 'flex');
       });
-      $('.close-btn').click(function () {
+      $('.close-btn-client').click(function () {
         $('.msgWrap').css('display', 'none');
       });
     });
